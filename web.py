@@ -1,7 +1,6 @@
 # package setting
 import streamlit as st
 
-
 st.header('这里是刷题网站的主页')
 with st.form('数学章节选择'):
     st.subheader('**选择你的数学科目和章节**')
