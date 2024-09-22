@@ -1,6 +1,6 @@
 import streamlit as st
 
-print('f{chapter}')
+st.write(chapter)
 
 
 
