@@ -6,9 +6,9 @@ with st.form('数学章节选择'):
     st.subheader('**选择你的数学科目和章节**')
 
     # Input widgets
-    chapter = st.selectbox("数学科目选择", ('高数', '线代', '概率论'))
-    selection = st.slider('章节选择', min_value=1, max_value=36, step=1)
-    type = st.selectbox('题目类型', ['错题', '例题'])
+    chapter = st.selectbox("数学科目选择", ('高数', '线代', '概率论'), key='chapter')
+    selection = st.slider('章节选择', min_value=1, max_value=36, step=1, key='selection')
+    type = st.selectbox('题目类型', ['错题', '例题'], key='type')
     # Every form must have a submit button
     submitted = st.form_submit_button('提交你的选择')
 
