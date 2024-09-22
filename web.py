@@ -26,7 +26,7 @@ if submitted:
         chapter = 'metric'
     if chapter == '概率论':
         chapter = 'probability'
-    st.session_state['chapter'] =chapter
+    st.session_state['chapter'] = chapter
     st.page_link('pages/home.py')
 else:
     st.write('☝️ Place your order!')
