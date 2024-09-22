@@ -20,12 +20,12 @@ if submitted:
         - 类型: `{type}`
         你的刷题网页在下方可以找到
         ''')
-    if chapter == '高数':
-        chapter = 'math'
-    if chapter == '线代':
-        chapter = 'metric'
-    if chapter == '概率论':
-        chapter = 'probability'
+    # if chapter == '高数':
+    #     chapter = 'math'
+    # if chapter == '线代':
+    #     chapter = 'metric'
+    # if chapter == '概率论':
+    #     chapter = 'probability'
     st.page_link('pages/home.py')
 else:
     st.write('☝️ Place your order!')
