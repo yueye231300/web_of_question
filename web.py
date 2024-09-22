@@ -20,6 +20,7 @@ if submitted:
         - 类型: `{type}`
         你的刷题网页在下方可以找到
         ''')
-    st.page_link('pages/home.py')
+    a = 'home'
+    st.page_link(f'pages/{a}.py')
 else:
     st.write('☝️ Place your order!')
