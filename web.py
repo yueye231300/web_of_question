@@ -18,6 +18,8 @@ if submitted:
         - 课程类型: `{chapter}`
         - 章节: `{selection}`
         - 类型: `{type}`
+        你的刷题网页在下方可以找到
         ''')
+    st.page_link('pages/home.py')
 else:
     st.write('☝️ Place your order!')
