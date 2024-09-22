@@ -1,7 +1,6 @@
 import streamlit as st
 
-st.write(chapter)
-
+st.write(st.session_state['chapter'])
 
 
 
