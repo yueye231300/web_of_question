@@ -4,10 +4,11 @@ import streamlit as st
 if "chapter" not in st.session_state:
     st.session_state.chapter= None
 if "selection" not in st.session_state:
-    st.session_state.chapter= None
+    st.session_state.selection= None
 if "type" not in st.session_state:
-    st.session_state.chapter= None
+    st.session_state.type= None
 st.header('这里是刷题网站的主页')
+
 with st.form('数学章节选择'):
     st.subheader('**选择你的数学科目和章节**')
 
