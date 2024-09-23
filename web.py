@@ -1,12 +1,12 @@
 # package setting
 import streamlit as st
 
-if "chapter" not in st.session_state:
-    st.session_state.chapter= None
-if "selection" not in st.session_state:
-    st.session_state.selection= None
-if "type" not in st.session_state:
-    st.session_state.type= None
+if "chapter" in st.session_state:
+    st.session_state.chapter = st.session_state.chapter
+if "selection" in st.session_state:
+    st.session_state.selection = st.session_state.selection
+if "type" in st.session_state:
+    st.session_state.type = st.session_state.type
 st.header('这里是刷题网站的主页')
 
 with st.form('数学章节选择'):
@@ -36,4 +36,4 @@ if submitted:
 else:
     st.write('☝️ Place your order!')
 
-st.Page("pages/home.py",title = "home")
+st.Page("pages/home.py",title="home")
