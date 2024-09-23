@@ -24,7 +24,7 @@ if "chapter" not in st.session_state:
 if "selection" not in st.session_state:
     st.session_state.selection = 1
 if "type" not in st.session_state:
-    st.session_state.type = None
+    st.session_state.type = 错题‘’
 
 logout_page = st.Page(logout, title="Log out", icon=":material/logout:")
 home = st.Page(
