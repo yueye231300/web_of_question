@@ -27,7 +27,7 @@ if "selection" not in st.session_state:
 if "type" not in st.session_state:
     st.session_state.type = "错题"
 
-# 导航页面
+# 导航页面功能
 def home_page():
     st.title("错题页面")
     st.write(f"当前选择的科目: {st.session_state.chapter}")
