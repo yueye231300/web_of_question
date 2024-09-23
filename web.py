@@ -16,7 +16,7 @@ def logout():
 def login():
     st.session_state.chapter = None
     st.session_state.selection = 1
-    st.session_state.type = None
+    st.session_state.type = '错题'
     st.rerun()
 
 if "chapter" not in st.session_state:
