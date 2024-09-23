@@ -27,7 +27,7 @@ if "type" not in st.session_state:
     st.session_state.type = st.session_state.type
 
 
-logout_page = st.Page(login, title="Log out", icon=":material/logout:")
+logout_page = st.Page(logout, title="Log out", icon=":material/logout:")
 home = st.Page(
     "pages/home.py",
     title="home",
