@@ -33,6 +33,7 @@ home = st.Page(
     "pages/home.py",
     title="home",
     icon=":material/help:",
+    default=(type == '错题')
 )
 test = st.Page("pages/test.py",
     title='test',
