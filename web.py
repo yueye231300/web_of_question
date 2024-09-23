@@ -53,3 +53,5 @@ if len(page_dict) > 0:
 
 else:
     pg = st.navigation([st.Page(login)])
+
+pg.run()
