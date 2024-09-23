@@ -20,12 +20,11 @@ def login():
     st.rerun()
 
 if "chapter" not in st.session_state:
-    st.session_state.chapter = st.session_state.chapter
+    st.session_state.chapter = None
 if "selection" not in st.session_state:
-    st.session_state.selection = st.session_state.selection
+    st.session_state.selection = 1
 if "type" not in st.session_state:
-    st.session_state.type = st.session_state.type
-
+    st.session_state.type = None
 
 logout_page = st.Page(logout, title="Log out", icon=":material/logout:")
 home = st.Page(
