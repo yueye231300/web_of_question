@@ -7,7 +7,7 @@ types = [None, "错题", "例题"]
 
 def login():
     st.header("登录界面")
-    type = st.selectbox("你要做啥样的题捏", types, key="type")
+    type = st.selectbox("你要做啥样的题捏", types)
 
     if st.button("登录"):
         st.session_state.type = type
