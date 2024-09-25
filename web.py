@@ -42,7 +42,7 @@ st.title("Request manager")
 page_dict = {}
 if st.session_state.type in ["错题"]:
     page_dict["练习例题"] = test
-if st.session_state.role in ["例题"]:
+if st.session_state.type in ["例题"]:
     page_dict["练习错题"] = error
 
 
