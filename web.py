@@ -39,12 +39,11 @@ probability_theory_test = st.Page(
 highmath_error = st.Page(
     "error_pages/highmath.py",
     title="高数错题习题",
-
+    default=(type == "错题"),
 )
 mertic_error = st.Page(
     "error_pages/highmath.py",
     title="线代错题习题",
-    default=(type == "错题"),
 )
 probability_theory_error = st.Page(
     "error_pages/highmath.py",
