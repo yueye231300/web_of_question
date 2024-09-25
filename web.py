@@ -57,12 +57,12 @@ account_pages = [logout_page]
 request_pages = [highmath_test, mertic_test, probability_theory_test]
 respond_pages = [highmath_error, mertic_error, probability_theory_error]
 
-st.title("宝贝的刷题网站")
+st.title("刷题网站")
 
 page_dict = {}
-if st.session_state.type in ["例题"]:
+if st.session_state.type== "例题":
     page_dict["练习例题"] = request_pages
-if st.session_state.type in ["错题"]:
+if st.session_state.type =="错题":
     page_dict["练习错题"] = respond_pages
 
 if len(page_dict) > 0:
