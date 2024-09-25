@@ -13,7 +13,6 @@ def login():
         st.session_state.type = type
         st.rerun()
 
-
 def logout():
     st.session_state.type = None
     st.rerun()
