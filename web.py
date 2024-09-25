@@ -60,9 +60,10 @@ respond_pages = [highmath_error, mertic_error, probability_theory_error]
 st.title("刷题网站")
 
 page_dict = {}
+default_page = None
 if st.session_state.type== "例题":
     page_dict["练习例题"] = request_pages
-if st.session_state.type =="错题":
+elif st.session_state.type =="错题":
     page_dict["练习错题"] = respond_pages
 
 if len(page_dict) > 0:
