@@ -1,55 +1,54 @@
 import streamlit as st
 
-# 定义登出页面功能
-def logout():
-    st.header('选择你需要刷的题目')
-    chapter = st.selectbox("数学科目选择", ('高数', '线代', '概率论'), key='chapter')
-    selection = st.slider('章节选择', min_value=1, max_value=36, step=1, key='selection')
-    question_type = st.selectbox('题目类型', ['错题', '例题'], key='type')
-    if st.button("提交选择"):
-        st.session_state.chapter = chapter
-        st.session_state.selection = selection
-        st.session_state.type = question_type
-        st.experimental_rerun()
-
-# 定义登录页面功能
-def login():
-    st.session_state.chapter = None
-    st.session_state.selection = 1
-    st.session_state.type = '错题'
-    st.experimental_rerun()
-
-# 初始化 session_state
-if "chapter" not in st.session_state:
-    st.session_state.chapter = None
-if "selection" not in st.session_state:
-    st.session_state.selection = 1
 if "type" not in st.session_state:
-    st.session_state.type = "错题"
+    st.session_state.type = None
 
-# 导航页面功能
-def home_page():
-    st.title("错题页面")
-    st.write(f"当前选择的科目: {st.session_state.chapter}")
-    st.write(f"当前选择的章节: {st.session_state.selection}")
-    st.write(f"当前题目类型: {st.session_state.type}")
+types = [None, "错题", "例题"]
 
-def example_page():
-    st.title("例题页面")
-    st.write(f"当前选择的科目: {st.session_state.chapter}")
-    st.write(f"当前选择的章节: {st.session_state.selection}")
-    st.write(f"当前题目类型: {st.session_state.type}")
+def login():
 
-# 页面导航逻辑
-st.title("Request Manager")
+    st.header("登录界面")
+    role = st.selectbox("你要做啥样的题捏", types, key="type")
 
-# 根据 session_state.type 决定显示哪个页面
-if st.session_state.type == '错题':
-    home_page()
-elif st.session_state.type == '例题':
-    example_page()
+    if st.button("登录"):
+        st.session_state.type = type
+        st.rerun()
 
-# 添加一个退出登录的按钮
-if st.button("退出登录"):
-    login()
 
+def logout():
+    st.session_state.type = None
+    st.rerun()
+
+
+type = st.session_state.type
+
+logout_page = st.Page(logout, title="登出")
+
+test = st.Page(
+    "pages/test.py",
+    title="练习习题",
+    default=(type == "例题"),
+)
+error = st.Page(
+    "pages/error.py", title="练习错题"
+)
+
+account_pages = [logout_page]
+request_pages = [test, error]
+
+
+st.title("Request manager")
+
+page_dict = {}
+if st.session_state.type in ["错题"]:
+    page_dict["练习例题"] = test
+if st.session_state.role in ["例题"]:
+    page_dict["练习错题"] = error
+
+
+if len(page_dict) > 0:
+    pg = st.navigation({"Account": account_pages} | page_dict)
+else:
+    pg = st.navigation([st.Page(login)])
+
+pg.run()
