@@ -42,11 +42,11 @@ highmath_error = st.Page(
     default=(type == "错题"),
 )
 mertic_error = st.Page(
-    "error_pages/highmath.py",
+    "error_pages/metric.py",
     title="线代错题习题",
 )
 probability_theory_error = st.Page(
-    "error_pages/highmath.py",
+    "error_pages/probability_theory.py",
     title="概率论错题习题",
 
 )
