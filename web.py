@@ -59,7 +59,7 @@ st.title("刷题网站")
 page_dict = {}
 if st.session_state.type== "例题":
     page_dict["练习例题"] = request_pages
-elif st.session_state.type =="错题":
+if st.session_state.type =="错题":
     page_dict["练习错题"] = respond_pages
 
 if len(page_dict) > 0:
