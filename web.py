@@ -23,16 +23,16 @@ type = st.session_state.type
 logout_page = st.Page(logout, title="登出")
 
 highmath_test = st.Page(
-    "test_pages/highmath.py",
+    "test_pages/highmath_test.py",
     title="高数例题习题",
     default=(type == "例题"),
 )
 mertic_test = st.Page(
-    "test_pages/metric.py",
+    "test_pages/metric_test.py",
     title="线代例题习题"
 )
 probability_theory_test = st.Page(
-"test_pages/probability_theory.py",
+    "test_pages/probability_theory_test.py",
     title="概率论例题习题"
 )
 
